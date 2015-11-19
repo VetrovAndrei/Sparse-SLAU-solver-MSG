@@ -9,5 +9,6 @@ void main()
 	std::ofstream X("X.txt");
 	SLAU mat(matr, vect, size, nachX);
 	mat.LOS();
+	mat.output(X);
 	system("pause");
 }

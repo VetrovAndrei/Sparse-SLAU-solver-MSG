@@ -5,6 +5,7 @@ vect::vect(void)
 {
 }
 
+//ведь возможно у нас получится вызвать конструктор с выделением памяти
 vect::vect(int n)
 {
 	V.resize(n);
@@ -27,6 +28,7 @@ void vect::read(std::ifstream &vect)
 	}
 }
 
+//перегрузка оператора присваивания
 vect& vect::operator=(const vect& newVect)
 	{
 		if (this != &newVect)
@@ -34,6 +36,7 @@ vect& vect::operator=(const vect& newVect)
 		return *this;
 	}
 
+//перегрузка перемножения векторов ака скалярное произведение
 double vect::operator* (const vect& newVect)
 {
 	double sum = 0;
@@ -47,6 +50,7 @@ double vect::operator* (const vect& newVect)
 	return sum;
 }
 
+// норма вектора. и да можно взять корень из перемножения выше, но я ведь крутой программист
 double vect::norm()
 {
 	double norma = 0;
@@ -58,6 +62,7 @@ double vect::norm()
 	return norma;
 }
 
+//перегрузка разности векторов. результат окажется в правом векторе
 vect& vect::operator-(vect& newVect)
 {
 	if (this->V.size() != newVect.V.size())
@@ -74,6 +79,7 @@ vect& vect::operator-(vect& newVect)
 	}
 }
 
+//перегрузка оператора сложения, результат окажется в левом векторе, а ведь я его даже вроде не использую
 vect& vect::operator+(vect& newVect)
 {
 	if (this->V.size() != newVect.V.size())

@@ -15,5 +15,8 @@ public:
 	void make(std::ifstream &matrix,  std::ifstream &vect, std::ifstream &size);
 	~matrix(void);
 	void multMV(vect &X, vect &Y);
+	void multMTV(vect &X, vect &Y);
+	void divDi(vect &X);
+	void Hilbert(std::ifstream &size);
 };
 
