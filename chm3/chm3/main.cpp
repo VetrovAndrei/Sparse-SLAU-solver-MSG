@@ -3,12 +3,14 @@
 void main()
 {
 	std::ifstream size ("size.txt");
-	std::ifstream matr("matrix.txt");
-	std::ifstream vect("vector.txt");
-	std::ifstream nachX("x0.txt");
 	std::ofstream X("X.txt");
-	SLAU mat(matr, vect, size, nachX);
-	mat.LOS();
+	SLAU mat(size, 1);
+	std::vector<double> L;
+	std::vector<double> U;
+	std::vector<double> D;
+	mat.LUdec(L, U, D);
+	//mat.LU_SLAU(L, U, D);
+	mat.MCG_LU(L, U, D);
 	mat.output(X);
 	system("pause");
 }

@@ -12,7 +12,7 @@ public:
 	int n; // размерность матрицы
 	double normF; // норма вектора F
 	matrix(void);
-	void make(std::ifstream &matrix,  std::ifstream &vect, std::ifstream &size);
+	void make(std::ifstream &size);
 	~matrix(void);
 	void multMV(vect &X, vect &Y);
 	void multMTV(vect &X, vect &Y);

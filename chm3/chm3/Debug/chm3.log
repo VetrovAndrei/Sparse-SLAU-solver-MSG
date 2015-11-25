@@ -1,8 +1,8 @@
-﻿Сборка начата 15.11.2015 22:18:07.
+﻿Сборка начата 24.11.2015 15:27:06.
      1>Проект "C:\Users\Андрей Ветров\Documents\GitHub\chm3\chm3\chm3\chm3.vcxproj" в узле 2 (целевые объекты Build).
      1>ClCompile:
-         E:\visual studio\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt SLAU.cpp
-         SLAU.cpp
+         E:\visual studio\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt main.cpp
+         main.cpp
        Link:
          E:\visual studio\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Андрей Ветров\Documents\GitHub\chm3\chm3\Debug\chm3.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Андрей Ветров\Documents\GitHub\chm3\chm3\Debug\chm3.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Андрей Ветров\Documents\GitHub\chm3\chm3\Debug\chm3.lib" /MACHINE:X86 Debug\main.obj
          Debug\matrix.obj
@@ -13,4 +13,4 @@
 
 Сборка успешно завершена.
 
-Затраченное время: 00:00:02.26
+Затраченное время: 00:00:03.59

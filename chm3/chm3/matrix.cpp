@@ -1,36 +1,56 @@
 #include "matrix.h"
 
 
-void matrix::make(std::ifstream &matrix,  std::ifstream &vect, std::ifstream &size)
+void matrix::make(std::ifstream &size)
 {
 	size >> n;
+	std::ifstream Ggu("ggu.txt");
+	std::ifstream Ggl("ggl.txt");
+	std::ifstream Jg("jg.txt");
+	std::ifstream Ig("ig.txt");
+	std::ifstream vect("vektor.txt");
+	std::ifstream Di("di.txt");
 	F.make(n);
 	F.read(vect);
 	normF = F.norm();
 	ig.resize(n + 1);
 	for (int i = 0; i < n + 1; i++)
 	{
-		matrix >> ig[i];
+		Ig >> ig[i];
+	}
+	if (ig[0] == 1)
+	{
+		for (int i = 0; i < n + 1; i++)
+		{
+			ig[i]--;
+		}
 	}
 	di.resize(n);
 	for (int i = 0; i < n; i++)
 	{
-		matrix >> di[i];
+		Di >> di[i];
 	}
 	ggu.resize(ig[n]);
 	for (int i = 0; i < ig[n]; i++)
 	{
-		matrix >> ggu[i];
+		Ggu >> ggu[i];
 	}
 	ggl.resize(ig[n]);
 	for (int i = 0; i < ig[n]; i++)
 	{
-		matrix >> ggl[i];
+		Ggl >> ggl[i];
 	}
 	jg.resize(ig[n]);
 	for (int i = 0; i < ig[n]; i++)
 	{
-		matrix >> jg[i];
+		Jg >> jg[i];
+	}
+	if (jg[0] == 1)
+	{
+		for (int i = 0; i < ig[n]; i++)
+		{
+			jg[i]--;
+		}
 	}
 }
 
@@ -103,16 +123,15 @@ void matrix::Hilbert(std::ifstream &size)
 	int k1, k2;
 	for (int i = 0; i < n; i++)
 	{
-		di[i] = double(1.0 * (2.0*i + 1.0));
+		di[i] = double(1.0 / (2.0 * i + 1.0));
 		k1 = ig[i];
 		k2 = ig[i+1];
 		int l = 0;
 		for(int k = k1; k < k2; k++, l++)
 		{
-			int j = jg[k];
-			ggl[j] = double(1.0 * (i + l + 1.0));
-			ggu[j] = ggl[j];
-			jg[j] = l;
+			ggl[k] = double(1.0 / (i + l + 1.0));
+			ggu[k] = ggl[k];
+			jg[k] = l;
 		}
 	}
 	vect x(n);
